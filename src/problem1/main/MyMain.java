@@ -11,8 +11,6 @@ import problem1.mybst.MyBinarySearchTree;
 
 import java.util.Scanner;
 
-import static problem1.mybst.MyBinarySearchTree.preOrderString;
-
 public class MyMain {
     public static void main(String[] args) {
         MyBinarySearchTree tree = new MyBinarySearchTree();
@@ -33,16 +31,6 @@ public class MyMain {
 
         //For Only Left Children 4,2,1,5 should be printed , for that we call printLeftChild()
         //defined in MyBinarySearchTree.java
-        tree.preOrder(tree.root);
-        System.out.println(preOrderString);
-        tree.postOrder(tree.root);
 
-
-
-
-
-//        System.out.println(tree.root.getKey());
-//        System.out.println(tree.root.getLeft().getKey()+"  "+tree.root.getRight().getKey());
-//        System.out.println(tree.root.getLeft().getLeft().getKey()+"  "+tree.root.getLeft().getRight().getKey()+"       "+tree.root.getRight().getKey());
     }
 }
