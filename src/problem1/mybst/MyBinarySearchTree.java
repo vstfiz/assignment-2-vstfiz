@@ -2,15 +2,19 @@ package problem1.mybst;
 
 import problem1.node.TreeNode;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 // to implement BinarySearchTree
 public class MyBinarySearchTree {
+    public static StringBuilder preOrderString;
     static int levels = 0;
     public TreeNode root;
+
+    public static StringBuilder getPreOrderString() {
+        return preOrderString;
+    }
+
     public MyBinarySearchTree() {
         this.root = null;
+        preOrderString = new StringBuilder();
     }
 
     public void add(final int value) {
@@ -49,12 +53,12 @@ public class MyBinarySearchTree {
     {
         printLeftChild(this.root, 1);
     }
-    public void preOrder(TreeNode root){
+    public static void preOrder(TreeNode root){
         if(root == null)
         {
             return ;
         }
-        System.out.print(root.getKey()+" ");
+        preOrderString.append(root.getKey()+" ");
         preOrder(root.getLeft());
         preOrder(root.getRight());
     }
