@@ -8,10 +8,6 @@ public class MyBinarySearchTree {
     static int levels = 0;
     public TreeNode root;
 
-    public static StringBuilder getPreOrderString() {
-        return preOrderString;
-    }
-
     public MyBinarySearchTree() {
         this.root = null;
         preOrderString = new StringBuilder();
@@ -34,24 +30,6 @@ public class MyBinarySearchTree {
         }
 
         return treeRoot;
-    }
-
-    void printLeftChild(TreeNode treeNode, int level)
-    {
-        if (treeNode == null) {
-            return;
-        }
-        if (levels < level) {
-            System.out.print(" " + treeNode.getKey());
-            levels = level;
-        }
-        printLeftChild(treeNode.getLeft(), level + 1);
-        printLeftChild(treeNode.getRight(), level + 1);
-    }
-
-    public void printLeftChild()
-    {
-        printLeftChild(this.root, 1);
     }
     public static void preOrder(TreeNode root){
         if(root == null)
