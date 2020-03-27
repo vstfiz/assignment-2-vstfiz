@@ -4,6 +4,7 @@ public class Student {
     private int rollNumber;
     private String Name;
     private int backLogCounter;
+    private int appearingCounter;
 
     public int getRollNumber() {
         return rollNumber;
@@ -26,10 +27,27 @@ public class Student {
         Name = name;
     }
 
-    public Student(int rollNumber, String name, int backLogCounter) {
+    public int getBackLogCounter() {
+        return backLogCounter;
+    }
+
+    public void setBackLogCounter(int backLogCounter) {
+        this.backLogCounter = backLogCounter;
+    }
+
+    public int getAppearingCounter() {
+        return appearingCounter;
+    }
+
+    public void setAppearingCounter(int appearingCounter) {
+        this.appearingCounter = appearingCounter;
+    }
+
+    public Student(int rollNumber, String name, int backLogCounter, int appearingCounter) {
         this.rollNumber = rollNumber;
         Name = name;
         this.backLogCounter = backLogCounter;
+        this.appearingCounter = appearingCounter;
     }
 
     @Override
@@ -37,6 +55,15 @@ public class Student {
         return "Student{" +
                 "rollNumber=" + rollNumber +
                 ", Name='" + Name + '\'' +
+                '}';
+    }
+
+    public String toStrings() {
+        return "Student{" +
+                "rollNumber=" + rollNumber +
+                ", Name='" + Name + '\'' +
+                ", backLogCounter=" + backLogCounter +
+                ", appearingCounter=" + appearingCounter +
                 '}';
     }
 }
