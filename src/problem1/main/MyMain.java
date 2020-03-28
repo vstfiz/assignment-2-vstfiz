@@ -31,6 +31,8 @@ public class MyMain {
 
         //For Only Left Children 4,2,1,5 should be printed , for that we call printLeftChild()
         //defined in MyBinarySearchTree.java
-
+        tree.printLeftChild();
+        //and print noLeftCounter as well
+        System.out.println(MyBinarySearchTree.noLeftCounter);
     }
 }

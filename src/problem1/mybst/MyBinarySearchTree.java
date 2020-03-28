@@ -6,6 +6,7 @@ import problem1.node.TreeNode;
 public class MyBinarySearchTree {
     public static StringBuilder preOrderString;
     static int levels = 0;
+    public static int noLeftCounter = 0;
     public TreeNode root;
 
     public MyBinarySearchTree() {
@@ -31,12 +32,31 @@ public class MyBinarySearchTree {
 
         return treeRoot;
     }
-    public static void preOrder(TreeNode root){
-        if(root == null)
-        {
-            return ;
+
+    void printLeftChild(TreeNode treeNode, int level) {
+        if (treeNode == null) {
+            return;
         }
-        preOrderString.append(root.getKey()+" ");
+        if (levels < level) {
+            if (treeNode.getLeft() == null) {
+                noLeftCounter++;
+            }
+            System.out.print(" " + treeNode.getKey());
+            levels = level;
+        }
+        printLeftChild(treeNode.getLeft(), level + 1);
+        printLeftChild(treeNode.getRight(), level + 1);
+    }
+
+    public void printLeftChild() {
+        printLeftChild(this.root, 1);
+    }
+
+    public static void preOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        preOrderString.append(root.getKey() + " ");
         preOrder(root.getLeft());
         preOrder(root.getRight());
     }
