@@ -2,7 +2,7 @@ package problem1.mybst;
 
 import problem1.node.TreeNode;
 
-// to implement BinarySearchTree
+// to implement BST
 public class MyBinarySearchTree {
     public static StringBuilder preOrderString;
     static int levels = 0;
